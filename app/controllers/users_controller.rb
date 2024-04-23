@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # Handle a successful save
+      flash[:success] = "Welcome! Account registered successfully"
+      redirect_to @user
     else
       # return status code 422
       render 'new', status: :unprocessable_entity
