@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
   get "/signup", to: "users#new"
-  get "up" => "rails/health#show", as: :rails_health_check
+  get "/login", to: "sessions#new"
+  get "/login", to: "sessions#create"
+  get "/login", to: "sessions#destroy"
   resources :users
 end
