@@ -31,7 +31,7 @@ class User < ApplicationRecord
 
   # Return a session token to prevent session hijacking
   # Reuse the remember digest for convenience
-  def sesson_token
+  def session_token
     remember_digest || remember
   end
 
