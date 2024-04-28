@@ -20,11 +20,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      reset_session # prevent Session-fixation attacks
-      log_in @user
-      # Handle a successful save
-      flash[:success] = "Welcome! Account registered successfully"
-      redirect_to @user
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       # return status code 422
       render 'new', status: :unprocessable_entity
