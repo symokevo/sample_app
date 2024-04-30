@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.2"
+ruby "3.3.0"
 
-gem "rails",                      "7.0.4"
+gem "rails",                      "7.1.3"
 gem "image_processing",           "1.12.2"
 gem "active_storage_validations", "0.9.8"
 gem "bcrypt",                     "3.1.18"
@@ -21,7 +21,7 @@ gem "puma",                       "5.6.4"
 gem "bootsnap",                   "1.12.0", require: false
 
 group :development, :test do
-  gem "sqlite3", "1.4.2"
+  gem 'sqlite3', '~> 1.4'
   gem "debug",   "1.5.0", platforms: %i[ mri mingw x64_mingw ]
 end
 
@@ -44,8 +44,3 @@ group :production do
   gem "pg",         "1.3.5"
   gem "aws-sdk-s3", "1.114.0", require: false
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem.
-# Uncomment the following line if you're running Rails
-# on a native Windows system:
-# gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
