@@ -1,15 +1,18 @@
-require "active_support/inflector"
+# This is the Guardfile for the 7th edition of the Rails Tutorial.
+# For the 6th edition, see here:
+# https://github.com/learnenough/sample_app_6th_ed/blob/main/Guardfile
 
+require "active_support/inflector"
+# Defines the matching rules for Guard.
 guard :minitest, all_on_start: false do
+  watch(%r{^test/(.*)/?(.*)_test\.rb$})
   watch('test/test_helper.rb') { 'test' }
   watch('config/routes.rb') { interface_tests }
   watch(%r{app/views/layouts/*}) { interface_tests }
-
   watch(%r{^app/models/(.*?)\.rb$}) do |matches|
     ["test/models/#{matches[1]}_test.rb",
-    "test/integration/microposts_interface_test.rb"]
+     "test/integration/microposts_interface_test.rb"]
   end
-
   watch(%r{^test/fixtures/(.*?)\.yml$}) do |matches|
     "test/models/#{matches[1].singularize}_test.rb"
   end
@@ -29,10 +32,6 @@ guard :minitest, all_on_start: false do
   watch(%r{^app/helpers/(.*?)_helper\.rb$}) do |matches|
     integration_tests(matches[1])
   end
-
-  watch(%r{^app/helpers/(.*?)_helper\.rb$}) do |matches|
-    integration_tests(matches[1])
-  end
   watch('app/views/layouts/application.html.erb') do
     'test/integration/site_layout_test.rb'
   end
@@ -41,7 +40,7 @@ guard :minitest, all_on_start: false do
   end
   watch('app/controllers/sessions_controller.rb') do
     ['test/controllers/sessions_controller_test.rb',
-    'test/integration/users_login_test.rb']
+     'test/integration/users_login_test.rb']
   end
   watch('app/controllers/account_activations_controller.rb') do
     'test/integration/users_signup_test.rb'
@@ -52,6 +51,30 @@ guard :minitest, all_on_start: false do
   end
   watch('app/controllers/relationships_controller.rb') do
     ['test/controllers/relationships_controller_test.rb',
-    'test/integration/following_test.rb']
+     'test/integration/following_test.rb']
   end
+end
+
+# Returns the integration tests corresponding to the given resource.
+def integration_tests(resource = :all)
+  if resource == :all
+    Dir["test/integration/*"]
+  else
+    Dir["test/integration/#{resource}_*.rb"]
+  end
+end
+
+# Returns all tests that hit the interface.
+def interface_tests
+  integration_tests << "test/controllers"
+end
+
+# Returns the controller tests corresponding to the given resource.
+def controller_test(resource)
+  "test/controllers/#{resource}_controller_test.rb"
+end
+
+# Returns all tests for the given resource.
+def resource_tests(resource)
+  integration_tests(resource) << controller_test(resource)
 end
