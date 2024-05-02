@@ -74,7 +74,7 @@ Rails.application.configure do
     :address        => 'smtp.sendgird.net',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => 'Aceteasea',
+    :user_name      => 'apikey',
     :password       => ENV['SENDGRID_API_KEY'],
     :domain         => '127.0.0.1',
     :enable_starttls_auto => true
