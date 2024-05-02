@@ -10,6 +10,6 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :user_name      => 'apikey',
   :password       => ENV['SENDGRID_API_KEY'],
-  :domain         => '127.0.0.1',
+  :domain         => 'heroku.com',
   :enable_starttls_auto => true
 }
