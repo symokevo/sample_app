@@ -20,6 +20,8 @@ gem "jbuilder",                   "2.11.5"
 gem "puma",                       "5.6.4"
 gem "bootsnap",                   "1.12.0", require: false
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem "debug",   "1.5.0", platforms: %i[ mri mingw x64_mingw ]
