@@ -69,7 +69,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'up.railway.app'
+  host = 'herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     address:         'smtp.gmail.com',
@@ -77,7 +77,7 @@ Rails.application.configure do
     authentication:  plain,
     user_name:       ENV['GOOGLE_SMTP_GMAIL'],
     password:        ENV['GOOGLE_SMTP_PASSWORD'],
-    domain:          'web-production-2368c.up.railway.app',
+    domain:          'https://enigmatic-reef-53453-84044e89206c.herokuapp.com/',
     enable_starttls_auto: true
   }
 
