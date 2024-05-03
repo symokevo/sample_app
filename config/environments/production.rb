@@ -74,13 +74,14 @@ Rails.application.configure do
     address:         'smtp.gmail.com',
     port:            587,
     domain:          'web-production-2368c.up.railway.app',
-    user_name:       Rails.application.credentials.database.username,
-    password:        Rails.application.credentials.database.GMAIL_PASSWORD,
+    user_name:       Rails.application.credentials.username,
+    password:        Rails.application.credentials.GMAIL_PASSWORD,
     authentication:  'plain',
     enable_starttls: true,
     open_timeout:    5,
     read_timeout:    5
   }
+
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
