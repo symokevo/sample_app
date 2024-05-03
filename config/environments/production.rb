@@ -72,11 +72,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgird.net',
-    :port           => '465',
+    :port           => '25',
     :authentication => :plain,
     :user_name      => 'apikey',
     :password       => ENV['SENDGRID_API_KEY'],
-    :domain         => 'railway.app',
+    :domain         => 'web-production-2368c.up.railway.app',
     :enable_starttls_auto => true
   }
 
