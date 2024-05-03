@@ -46,5 +46,3 @@ end
 group :production do
   gem "pg"
 end
-
-gem "render_build_setup", "~> 0.0.1"
