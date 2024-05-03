@@ -67,19 +67,17 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
-  host = 'https://web-production-2368c.up.railway.app'
-  config.action_mailer.default_url_options = { host: host }
   config.action_mailer.delivery_method = :smtp
+  host = 'https://web-production-2368c.up.railway.app/'
+  config.action_mailer.default_url_options = { host: host }
   config.action_mailer.smtp_settings = {
     address:         'smtp.gmail.com',
     port:            587,
     domain:          'web-production-2368c.up.railway.app',
-    user_name:       Rails.application.credentials.username,
-    password:        Rails.application.credentials.GMAIL_PASSWORD,
+    user_name:       'zimastack@gmail.com>',
+    password:        'rzrdkbfcowepcbcm',
     authentication:  'plain',
     enable_starttls: true,
-    open_timeout:    5,
-    read_timeout:    5
   }
 
 
