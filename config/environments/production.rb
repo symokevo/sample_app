@@ -38,7 +38,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
   # Store uploaded files on Amazon AWS.
-  # config.active_storage.service = :amazon
+  config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -69,15 +69,15 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'herokuapp.com'
+  host = 'enigmatic-reef-53453-84044e89206c.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     address:         'smtp.gmail.com',
     port:            587,
-    authentication:  plain,
+    authentication:  'plain',
     user_name:       ENV['GOOGLE_SMTP_GMAIL'],
+    domain:          'enigmatic-reef-53453-84044e89206c.herokuapp.com',
     password:        ENV['GOOGLE_SMTP_PASSWORD'],
-    domain:          'https://enigmatic-reef-53453-84044e89206c.herokuapp.com/',
     enable_starttls_auto: true
   }
 
