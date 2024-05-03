@@ -38,7 +38,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
   # Store uploaded files on Amazon AWS.
-  config.active_storage.service = :local
+  # config.active_storage.service = :amazon
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -66,20 +66,20 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'https://web-production-2368c.up.railway.app/'
+  host = 'up.railway.app'
   config.action_mailer.default_url_options = { host: host }
-  config.action_mailer.smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     address:         'smtp.gmail.com',
     port:            587,
+    authentication:  plain,
+    user_name:       ENV['GOOGLE_SMTP_GMAIL'],
+    password:        ENV['GOOGLE_SMTP_PASSWORD'],
     domain:          'web-production-2368c.up.railway.app',
-    user_name:       'zimastack@gmail.com>',
-    password:        'rzrdkbfcowepcbcm',
-    authentication:  'plain',
-    enable_starttls: true,
+    enable_starttls_auto: true
   }
-
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
