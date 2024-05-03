@@ -71,11 +71,11 @@ Rails.application.configure do
   host = 'https://web-production-2368c.up.railway.app'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgird.net',
-    :port           => '25',
+    :address        => 'smtp.gmail.com',
+    :port           => '587',
     :authentication => :plain,
-    :user_name      => 'apikey',
-    :password       => ENV['SENDGRID_API_KEY'],
+    :user_name      => 'zimastack@gmial.com',
+    :password       => ENV['GMAIL_PASSWORD'],
     :domain         => 'web-production-2368c.up.railway.app',
     :enable_starttls_auto => true
   }
