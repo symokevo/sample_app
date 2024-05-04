@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  require 'resolv-replace'
   protect_from_forgery with: :null_session
   include SessionsHelper
 
