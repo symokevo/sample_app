@@ -62,22 +62,19 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "sample_app_production"
 
-  config.action_mailer.perform_caching = false
-
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+  config.action_mailer.default_url_options = { host: 'web-production-2368c.up.railway.app/', port: 3000 }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'enigmatic-reef-53453-84044e89206c.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
-  ActionMailer::Base.smtp_settings = {
+  config.action_mailer.perform_caching = false
+  config.action_mailer.smtp_settings = {
     address:         'smtp.gmail.com',
     port:            587,
-    authentication:  'plain',
     user_name:       ENV['GOOGLE_SMTP_GMAIL'],
-    domain:          'enigmatic-reef-53453-84044e89206c.herokuapp.com',
     password:        ENV['GOOGLE_SMTP_PASSWORD'],
+    authentication: "plain",
     enable_starttls_auto: true
   }
 
