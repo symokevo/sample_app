@@ -161,6 +161,7 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  border-radius: 1000px;
 }
 
 .gravatar_edit {
@@ -276,6 +277,7 @@ input {
   .user {
     margin-top: 5em;
     padding-top: 0;
+    border-radius: 1000px;
   }
   .content {
     display: block;
@@ -294,6 +296,7 @@ input {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
+    border-radius: 1000px;
   }
 }
 
