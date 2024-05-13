@@ -17,17 +17,293 @@
     </div>
   </div>
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1>
+    <header class="hero-section mt-4">
+      <div class="container">
+        <div class="row align-items-center py-4 g-5">
+          <div class="col-12 col-md-6">
+            <div class="text-center text-md-start">
+              <h1 class="display-md-2 display-4 fw-bold text-dark pb-2">
+                <span class="text-primary">United </span>we stand.
+              </h1>
+              <p class="lead">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <button
+                class="btn btn-primary px-5 py-3 mt-3 fs-5 fw-medium"
+                type="button"
+              >
+                Read On...
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <%= image_tag("zra.png", alt: "Company Logo", class: "img-fluid") %>
+          </div>
+        </div>
+      </div>
+    </header>
 
-    <h2>
-      This is the home page for the
-      <a href="https://www.suuef.com">Suuef Tech UK</a>
-      sample application.
-    </h2>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    <div class="container">
+      <div class="row align-items-center gx-3 gy-2 py-2 mt-2">
+        <div class="col-12 col-md-12 col-lg-5">
+          <%= image_tag("africa_1.svg", alt: "African map", class: "img-fluid mx-auto d-block") %>
+        </div>
+        <div class="col-12 col-md-12 text-center text-lg-start col-lg-7">
+          <h2 class="fw-bold text-primary fs-1 pb-3">Introduction</h2>
+          <p class="about-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            In hac habitasse platea dictumst vestibulum rhoncus. Malesuada nunc 
+            vel risus commodo viverra.
+          </p>
+          <p class="about-text">
+            Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. 
+            Faucibus turpis in eu mi bibendum neque egestas congue quisque. 
+            In fermentum et sollicitudin ac orci. Non nisi est sit amet 
+            facilisis magna etiam tempor orci
+          </p>
+          <%= link_to "More...", about_path, class: "btn btn-primary px-5 py-3 mt-3 fs-5 fw-medium" %>
+        </div>
+    </div>
+  </div>
+  <div class="features-section py-5">
+    <div class="container">
+      <h2 class="fs-1 fw-bold text-center pt-5 pb-5 text-primary">
+        Our Principles
+      </h2>
+      <div class="row g-5 pb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="card px-3 py-4 shadow-sm">
+            <h3 class="f5">Inclusion</h3>
+            <p class="card-text lead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card px-3 py-4 shadow-sm blue-bg">
+            <h3 class="f5">Integrity</h3>
+            <p class="card-text lead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 offset-md-3 offset-0 offset-lg-0">
+          <div class="card px-3 py-4 shadow-sm">
+            <h3 class="f5">Transparency</h3>
+            <p class="card-text lead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <%= link_to image_tag("logo.svg", alt: "Rails logo", width: "240"), "https://suuef.com" %>
+  <div class="container my-5">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12">
+        <h2 class="fs-1 fw-bold text-primary text-center pb-5">
+          Our Management
+        </h2>
+        <ul class="nav nav-tabs d-flex flx-wrap justify-content-center" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active me-md-3 me-1 text-dark" id="home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#home-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="home-tab-pane"
+              aria-selected="true">
+              All
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link me-md-3 me-1 text-dark" id="chairman"
+              data-bs-toggle="tab"
+              data-bs-target="#chairman-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="profile-tab-pane"
+              aria-selected="false">
+              Chairman
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link me-md-3 me-1 text-dark" id="vchairman-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#vchairman-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="contact-tab-pane"
+              aria-selected="false">
+              Vice Chairman
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link me-md-3 me-1 text-dark" id="secretary-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#secretary-tab-pane"
+              type="button"
+              role="tab"
+              aria-controls="contact-tab-pane"
+              aria-selected="false">
+              Secretary
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <div class="row g-4 mt-5 justify-content-center align-items-center">
+              <div class="col-12 col-md-4">
+                <%= image_tag("prof-7.jpeg", alt: "Chairman", class: "img-fluid d-block mx-auto") %>
+              </div>
+              <div class="col-12 col-md-4">
+                <%= image_tag("prof-7.jpeg", alt: "Vice Chairman", class: "img-fluid d-block mx-auto") %>
+              </div>
+              <div class="col-12 col-md-4">
+                <%= image_tag("prof-9.jpeg", alt: "Secretary", class: "img-fluid d-block mx-auto") %>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="chairman-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <div class="row mt-5 g-4">
+              <div class="col-12 col-md-4">
+                <figure>
+                  <%= image_tag("prof-7.jpeg", alt: "Chairman", class: "img-fluid") %>
+                  <figcaption class="text-center p-2">Mr. Chairman</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="vchairman-tab-pane" role="tabpanel" aria-labelledby="vchairman-tab" tabindex="0">
+            <div class="row g-4 mt-5">
+              <div class="col-12 col-md-4">
+                <figure>
+                  <%= image_tag("prof-7.jpeg", alt: "Vice Chairman", class: "img-fluid") %>
+                  <figcaption class="text-center p-2">Mr. Vice Chairman</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="secretary-tab-pane" role="tabpanel" aria-labelledby="secretary-tab" tabindex="0">
+            <div class="row g-4 mt-5">
+              <div class="col-12 col-md-4">
+                <figure>
+                  <%= image_tag("prof-9.jpeg", alt: "Secretary", class: "img-fluid") %>
+                  <figcaption class="text-center p-2">Md. Secretary</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5 mb-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="fw-bold text-primary fs-1 pb-3 text-center">
+          Our Operations
+        </h2>
+
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fs-3 text-dark fw-medium"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Member Support
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <p class="lead">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                  sed do eiusmod tempor incididunt ut labore et dolore magna 
+                  aliqua. In hac habitasse platea dictumst vestibulum rhoncus. 
+                  Malesuada nunc vel risus commodo viverra. Sed ullamcorper 
+                  morbi tincidunt ornare massa eget egestas purus. Faucibus 
+                  turpis in eu mi bibendum neque egestas congue quisque.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fs-3 text-dark fw-medium"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Marketing Operaions
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <p class="lead">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                  sed do eiusmod tempor incididunt ut labore et dolore magna 
+                  aliqua. In hac habitasse platea dictumst vestibulum rhoncus. 
+                  Malesuada nunc vel risus commodo viverra. Sed ullamcorper 
+                  morbi tincidunt ornare massa eget egestas purus. Faucibus 
+                  turpis in eu mi bibendum neque egestas congue quisque.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fs-3 text-dark fw-medium"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Financial Operations
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <p class="lead">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                  sed do eiusmod tempor incididunt ut labore et dolore magna 
+                  aliqua. In hac habitasse platea dictumst vestibulum rhoncus. 
+                  Malesuada nunc vel risus commodo viverra. Sed ullamcorper 
+                  morbi tincidunt ornare massa eget egestas purus. Faucibus 
+                  turpis in eu mi bibendum neque egestas congue quisque.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
